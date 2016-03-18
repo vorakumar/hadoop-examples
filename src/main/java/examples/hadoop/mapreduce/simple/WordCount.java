@@ -1,3 +1,5 @@
+package examples.hadoop.mapreduce.simple;
+
 import java.io.IOException;
 import java.util.StringTokenizer;
 
