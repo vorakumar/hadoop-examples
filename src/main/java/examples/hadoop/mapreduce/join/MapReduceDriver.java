@@ -51,7 +51,6 @@ public class MapReduceDriver {
         job.setJarByClass(MapReduceDriver.class);
         job.setMapperClass(AmountByCityMapper.class);
         job.setCombinerClass(AmountByCityReducer.class);
-//        job.setReducerClass(AmountByCityReducer.class);
 
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(LongWritable.class);
