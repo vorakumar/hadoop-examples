@@ -17,13 +17,18 @@ function load-docker-env {
 function setup {
   echo "Creating VM..."
   docker-machine create -d virtualbox hadoop
+
   echo "Starting VM..."
   docker-machine start hadoop
-  load-docker-env
+
   echo "Fetching Docker image..."
+  load-docker-env
   docker pull sequenceiq/hadoop-docker:2.7.0
+
   echo "Building Maven project..."
+  brew install maven
   mvn clean compile
+
   echo "Running container..."
   docker run --name 'hadoop-docker' -it sequenceiq/hadoop-docker:2.7.0 /etc/bootstrap.sh -bash
 }
