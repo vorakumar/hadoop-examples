@@ -9,7 +9,7 @@ public class ClientOrderSortShuffle {
     public static class CustomerPartitioner extends Partitioner<Key, Text> {
         @Override
         public int getPartition(Key key, Text text, int numPartitions) {
-            return (key.clientId.hashCode() & Integer.MAX_VALUE) / numPartitions;
+            return -1;
         }
     }
 
@@ -18,7 +18,7 @@ public class ClientOrderSortShuffle {
 
         @Override
         public int compare(WritableComparable a, WritableComparable b) {
-            return ((Key)a).clientId.compareTo(((Key)b).clientId);
+            return -1;
         }
     }
 

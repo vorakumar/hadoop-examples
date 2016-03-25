@@ -14,8 +14,6 @@ public class OrderMapper extends Mapper<Object, Text, Key, Text> {
 
     @Override
     protected void map(Object key, Text value, Context context) throws IOException, InterruptedException {
-        String[] tokens = value.toString().split(",");
-        amount.set(tokens[2]);
-        context.write(new Key(tokens[1], SORT_TAG), amount);
+
     }
 }

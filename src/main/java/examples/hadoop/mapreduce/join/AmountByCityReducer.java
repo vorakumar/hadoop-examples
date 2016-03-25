@@ -12,11 +12,6 @@ public class AmountByCityReducer extends Reducer<Text, LongWritable, Text, LongW
 
     @Override
     protected void reduce(Text city, Iterable<LongWritable> orderTotals, Context context) throws IOException, InterruptedException {
-        long total = 0;
-        for (LongWritable value : orderTotals) {
-            total += value.get();
-        }
-        totalAmountForCity.set(total);
-        context.write(city, totalAmountForCity);
+
     }
 }

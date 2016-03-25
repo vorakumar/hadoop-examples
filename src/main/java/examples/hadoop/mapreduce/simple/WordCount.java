@@ -19,30 +19,26 @@ public class WordCount {
             extends Mapper<Object, Text, Text, IntWritable>{
 
         private final static IntWritable one = new IntWritable(1);
-        private Text word = new Text();
 
         public void map(Object key, Text value, Context context
         ) throws IOException, InterruptedException {
-            StringTokenizer itr = new StringTokenizer(value.toString());
-            while (itr.hasMoreTokens()) {
-                word.set(itr.nextToken());
-                context.write(word, one);
-            }
+          //Input value is the text containing words from the input files
+          //Iterate over words in value
+          //Write each resulting key/value to the context
+          //Check the main method to see data type expected for key/value
+
         }
     }
 
     public static class IntSumReducer
             extends Reducer<Text,IntWritable,Text,IntWritable> {
-        private IntWritable result = new IntWritable();
 
         public void reduce(Text key, Iterable<IntWritable> values, Context context
         ) throws IOException, InterruptedException {
-            int sum = 0;
-            for (IntWritable val : values) {
-                sum += val.get();
-            }
-            result.set(sum);
-            context.write(key, result);
+          //Input key is the word, values are the counts for that word that need to be combined
+          //Iterate over values to get sum
+          //Write the resulting key/value to the context
+          //Check the main method to see data type expected for key/value
         }
     }
 
