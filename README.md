@@ -6,7 +6,9 @@
 ```
 
 ### Wordcount example
-Counts frequencies of each word in the directory. To run the example:
+Counts frequencies of each word in the directory. 
+
+Follow the comments in the `examples.hadoop.mapreduce.simple` package and fill in the missing code. Then run,
 
 ```shell
 ./go word-count  
@@ -24,7 +26,7 @@ Given following input data, calculate total amount spent by customers in differe
 ##### Output
 <City, Total Amount spenty by customers in that city>
  
- To run the example:
+Follow the comments in the `examples.hadoop.mapreduce.join` package and fill in the missing code. Then run,
 
 ```shell
 ./go amount-by-city  
