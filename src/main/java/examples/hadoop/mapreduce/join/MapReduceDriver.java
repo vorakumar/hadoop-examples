@@ -68,10 +68,11 @@ public class MapReduceDriver {
     public static void main(String[] args) throws Exception {
 
         MapReduceDriver mapReduceDriver = new MapReduceDriver();
-        Path customers = new Path(args[0]);
-        Path orders = new Path(args[1]);
-        Path staging = new Path(args[2]);
-        Path output = new Path(args[3]);
+        String dataDir = args[0];
+        Path customers = new Path(dataDir+"/customers.csv");
+        Path orders = new Path(dataDir+"/orders.csv");
+        Path staging = new Path(dataDir+"/staging");
+        Path output = new Path(dataDir+"/output");
 
         Configuration conf = new Configuration();
 
